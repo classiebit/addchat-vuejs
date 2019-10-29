@@ -8,9 +8,10 @@
                     v-if="countNotification() > 0"
                 ><i class="fas fa-bell"></i></span>
                 <img class="c-bubble-image" :src="widgetIcon(config.chat_icon)"/>
+                
+                <p class="c-bubble-pop" v-if="config.logged_user_id == null">{{ lang.login_first_chat }}</p>
             </div>
 
-            <p v-if="config.logged_user_id == null">{{ lang.login_first_chat }}</p>
         </div>
         
         <div v-if="config.logged_user_id != null" >
@@ -71,8 +72,8 @@
                 </div>      
 
                 <!-- footer -->
-                <div class="c-footer">
-                    <p class="c-footer-text">{{config.footer_text}}</p>
+                <div class="c-footer" v-if="config.footer_text">
+                    <p class="c-footer-text"><a :href="config.footer_url" target="_blank">{{config.footer_text}}</a></p>
                 </div>
 
                 <!-- image modal | class => c-active -->
@@ -142,7 +143,10 @@
                         <li class="ca-sidebar-list-item" @click="ca_active = 5" :class="{'ca-active' : ca_active === 5 }">{{ lang.settings }}</li>
                     </ul>
 
-                    <div class="ca-footer">{{config.footer_text}}</div>
+                    <!-- footer -->
+                    <div class="ca-footer" v-if="config.footer_text">
+                        <a :href="config.footer_url" target="_blank">{{config.footer_text}}</a>
+                    </div>
                 </div>
                 
                 <div class="ca-content">

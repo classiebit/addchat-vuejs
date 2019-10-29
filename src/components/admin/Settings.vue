@@ -18,11 +18,6 @@
                             </div>
 
                             <div class="c-input-group">
-                                <label class="c-label">{{ lang.footer_text }}</label>
-                                <input class="c-input" type="text" name="footer_text" placeholder="e.g AddChat | by Classiebit" :value="settings.footer_text" v-validate="'required'">
-                            </div>
-
-                            <div class="c-input-group">
                                 <label class="c-label">{{ lang.site_logo }}</label>
                                 <img class="c-image-big no-radius" :src="imageSrc ? imageSrc : imageSource(settings.site_logo)" >
                                 <div class="c-edit c-animate">
@@ -39,21 +34,18 @@
                                 </div>
                             </div>
 
+                            <div class="c-input-group">
+                                <label class="c-label">{{ lang.footer_text }}</label>
+                                <input class="c-input" type="text" name="footer_text" placeholder="e.g AddChat | by Classiebit" :value="settings.footer_text">
+                            </div>
+
+                            <div class="c-input-group">
+                                <label class="c-label">{{ lang.footer_text }} {{ lang.url }}</label>
+                                <input class="c-input" type="text" name="footer_url" placeholder="e.g https://classiebit.com/addchat-laravel-pro" :value="settings.footer_url">
+                            </div>
 
                             <p class="c-title">{{ lang.widget_config }}</p>
 
-                            <label class="c-label">{{ lang.session_user_id_logged }}</label>
-                            <div class="c-input-group c-input-group-prepend">
-                                <div class="c-prepend">
-                                    <div class="c-prepend-text">$_SESSION["</div>
-                                </div>
-                                <input class="c-input c-prepend-input" type="text" name="session_user_id" placeholder="e.g user_id" :value="settings.session_user_id" v-validate="'required'">
-                                <div class="c-prepend">
-                                    <div class="c-prepend-text">"]</div>
-                                </div>
-                            </div>
-
-                            
                             <div class="c-input-group">
                                 <label class="c-label">{{ lang.admin }} {{ lang.users_id }} ({{ lang.value }})</label>
                                 <input class="c-input" type="number" name="admin_user_id" placeholder="e.g 1" :value="settings.admin_user_id" v-validate="'required'">
@@ -256,7 +248,7 @@ export default {
                 
                 if(response.data.status ){
 
-                    this.showNotification('success', this.lang.settings+' '+this.lang.saved);
+                    this.showNotification('success', this.lang.settings+' '+this.lang.saved+' | '+this.lang.logout_login);
                     this.getSettings();
                 } else {
                     
