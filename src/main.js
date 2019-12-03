@@ -1,8 +1,12 @@
+
+
+
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 import axios from 'axios'
 import { mapState, mapMutations} from 'vuex';
+
 
 window.moment = require('moment');
 
@@ -105,5 +109,20 @@ axios
         mounted() {
             this.get_lang();
         },
+
+          
+
     }).$mount('#addchat_app')
 }).catch(function() {});
+
+
+
+export default {
+    
+    install(Vue, options = {}) {
+        
+        Vue.prototype.$store.registerModule('addchat_store', store)
+    
+        Vue.component("addchat-lite", App);
+    }
+}

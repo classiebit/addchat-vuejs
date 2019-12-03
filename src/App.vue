@@ -170,6 +170,8 @@
 
 <script>
 
+
+
 import axios from 'axios';
 import { mapState, mapMutations, mapActions } from 'vuex';
 
@@ -302,6 +304,8 @@ export default {
     {
         this.getConfig();
     },
+    
+
     watch : {
         // admin authentication
         admin_active: function() {
