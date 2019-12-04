@@ -1,5 +1,5 @@
 {
-  "name": "addchat-vuejs",
+  "name": "@classiebit/addchat-vuejs",
   "version": "1.0.0",
   "private": false,
   "description": "Addchat VueJS package for AddChat Laravel API",
@@ -72,7 +72,6 @@
     "not ie <= 8"
   ],
   "repository": {
-      "type": "git",
-      "url": "git+"
+      "url": "git://github.com/classiebit/addchat-vuejs.git"
   }
 }
