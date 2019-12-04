@@ -1,8 +1,8 @@
 {
   "name": "addchat-vuejs",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "private": false,
-  "description": "this is addchat package",
+  "description": "Addchat VueJS package for AddChat Laravel API",
   "main": "dist/index.js",
   "scripts": {
     "dev": "npm run development",
